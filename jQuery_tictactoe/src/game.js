@@ -12,7 +12,7 @@ class Game {
   }
 
   playMove(pos) {
-    alert("PLAYMOVE");
+    // alert("PLAYMOVE");
     this.board.placeMark(pos, this.currentPlayer);
     this.swapTurn();
   }

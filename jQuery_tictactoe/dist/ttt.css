@@ -6,6 +6,12 @@
   background-color: yellow;  
 }
 
+.white {
+  background-color: white;
+  font-size: 50px;
+  text-align: center;
+}
+
 #grid {
   display: flex;
   flex-wrap: wrap;

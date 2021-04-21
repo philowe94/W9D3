@@ -25,7 +25,7 @@ class Board {
         }
       }
     }
-
+    
     return true;
   }
 

@@ -8,11 +8,25 @@ class View {
   bindEvents() {
     $("ul").on("click", "li", (e) => {
       let pos = $(e.currentTarget).data("pos").split(',').map((el) => parseInt(el));
+      this.makeMove($(e.currentTarget));
       this.game.playMove(pos);
+      if (this.game.isOver()) {
+        alert(this.game.winner() + ' wins!');
+      }
     });
   }
-
-  makeMove($square) {}
+  
+  makeMove($square) {
+    if ($square.hasClass("white")) {
+      alert('Square is taken. Please pick valid square!');
+      
+    } else {
+      $square.removeClass();
+      $square.addClass("white");
+      let currentPlayer = this.game.currentPlayer;
+      $square.text(currentPlayer);
+    }
+  }
 
   setupBoard() {
     let $grid = $("<ul>");
