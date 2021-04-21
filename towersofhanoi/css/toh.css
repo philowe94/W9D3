@@ -1,0 +1,31 @@
+.toh {
+  width: 400px;
+  display: flex;
+
+}
+
+.tower {
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.disc {
+  border: 1px solid blue;
+  background-color: darkgreen;
+  color: white;
+  text-align: center;
+}
+
+.selected {
+  background-color: yellow;
+}
+
+.deselected {
+  background-color: white;
+}
