@@ -35,7 +35,7 @@ class View {
     $("ul").attr("id", "grid");
     for (let i=0; i<3; i++) {
       for(let y=0; y<3; y++) {
-        const $square = $("<li>").attr("data-pos", [i, y])
+        const $square = $("<li>").attr("data-pos", [i, y]);
         $("ul").append($square);
       }
     }
