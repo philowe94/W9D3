@@ -5,3 +5,10 @@
 .yellow {
   background-color: yellow;  
 }
+
+#grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  list-style-type: none;
+}

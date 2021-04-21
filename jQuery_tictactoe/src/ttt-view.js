@@ -1,10 +1,16 @@
 class View {
   constructor(game, $el) {
     this.game = game;
+    
     this.$el = $el;
   }
     
-  bindEvents() {}
+  bindEvents() {
+    $("ul").on("click", "li", (e) => {
+      let pos = $(e.currentTarget).data("pos").split(',').map((el) => parseInt(el));
+      this.game.playMove(pos);
+    });
+  }
 
   makeMove($square) {}
 
@@ -12,11 +18,12 @@ class View {
     let $grid = $("<ul>");
     this.$el.append($grid);
 
-    $("ul").css("display", "flex");
-    $("ul").css("flex-wrap", "wrap");
-    $("ul").css("width", "300");
-    for (let i=0; i<9; i++) {
-      $("ul").append($("<li>").text("test"));
+    $("ul").attr("id", "grid");
+    for (let i=0; i<3; i++) {
+      for(let y=0; y<3; y++) {
+        const $square = $("<li>").attr("data-pos", [i, y])
+        $("ul").append($square);
+      }
     }
 
     $("li").css("width", "90");
@@ -31,6 +38,7 @@ class View {
     $("ul").on("mouseover", "li", toggleHover)
     $("ul").on("mouseleave", "li", toggleHover)
 
+    this.bindEvents();
   }
 }
 
